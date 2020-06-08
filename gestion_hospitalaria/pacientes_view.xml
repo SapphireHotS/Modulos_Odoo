@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="view_form_pacientes" model="ir.ui.view">
+            <field name="name">Pacientes Form</field>
+            <field name="model">pacientes</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="telefono"/>
+                    <field name="nss"/>
+                    <field name="familiar"/>
+                    <field name="poblacion"/>
+                    <field name="profesion"/>
+                    <field name="fechanac"/>
+                    <field name="medico"/>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_pacientes" model="ir.ui.view">
+            <field name="name">Pacientes Tree</field>
+            <field name="model">pacientes</field>
+            <field name="arch" type="xml">
+                <tree colors="pacientes">
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="nss"/>
+                    <field name="fechanac"/>
+                    <field name="medico"/>
+                </tree>
+            </field>
+          </record>
+        <data>
+            <!-- Action to open Vehiculos list -->
+            <act_window
+                id="action_pacientes"
+                name="Pacientes"
+                res_model="pacientes"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_pacientes" name="Pacientes" sequence="10"/>
+            <menuitem id="menu_pacientes_pacientes" name="Pacientes" parent="menu_pacientes" sequence="10" action="action_pacientes" />
+        </data>
+    </odoo>

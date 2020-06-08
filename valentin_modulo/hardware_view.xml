@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <data>
+            <!-- Action to open hardware list -->
+            <act_window
+                id="action_hardware"
+                name="Hardware"
+                res_model="hardware"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_hardware" 
+            name="Hardware" 
+            parent="menu_gestion_empresa" 
+            sequence="10" 
+            action="action_hardware" />
+        </data>
+
+        <record id="view_form_hardware" model="ir.ui.view">
+            <field name="name">hardware Form</field>
+            <field name="model">hardware</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <header>
+					</header>
+					<sheet>
+						<group name="group_top">
+							<group name="group_left">
+								<field name="idproducto"/>
+                                <field name="nombre"/>
+                                <field name="precio"/>
+							</group>
+							<group name="group_right">							
+								<field name="stock"/>
+								<field name="descripcion"/>
+							</group>
+						</group>							
+					</sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_hardware" model="ir.ui.view">
+            <field name="name">hardware Tree</field>
+            <field name="model">hardware</field> 
+            <field name="arch" type="xml">
+                <tree colors="hardware">
+                    <field name="idproducto"/>
+                    <field name="nombre"/>
+                    <field name="stock"/>
+                    <field name="precio"/>
+                </tree>
+            </field>
+          </record>
+        
+    </odoo>

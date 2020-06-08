@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="view_form_camas" model="ir.ui.view">
+            <field name="name">Camas Form</field>
+            <field name="model">camas</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <field name="identificador"/>
+                    <field name="active"/>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_camas" model="ir.ui.view">
+            <field name="name">Camas Tree</field>
+            <field name="model">camas</field>
+            <field name="arch" type="xml">
+                <tree colors="camas">
+                    <field name="identificador"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+          </record>
+        <data>
+            <!-- Action to open Vehiculos list -->
+            <act_window
+                id="action_camas"
+                name="Camas"
+                res_model="camas"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_camas" name="Camas" sequence="10"/>
+            <menuitem id="menu_camas_camas" name="Camas" parent="menu_camas" sequence="10" action="action_camas" />
+        </data>
+    </odoo>

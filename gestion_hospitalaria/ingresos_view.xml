@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="view_form_ingresos" model="ir.ui.view">
+            <field name="name">Ingresos Form</field>
+            <field name="model">ingresos</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <field name="identificador"/>
+                    <field name="medico"/>
+                    <field name="paciente"/>
+                    <field name="cama"/>
+                    <field name="especialidad"/>
+                    <field name="diagnostico"/>
+                    <field name="tratamiento"/>
+                    <field name="descripcion"/>
+                    <field name="fecha_alta"/>
+                    <field name="fecha_baja"/>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_ingresos" model="ir.ui.view">
+            <field name="name">Ingresos Tree</field>
+            <field name="model">ingresos</field>
+            <field name="arch" type="xml">
+                <tree colors="ingresos">
+                    <field name="identificador"/>
+                    <field name="paciente"/>
+                    <field name='medico'/>
+                    <field name="cama"/>
+                    <field name="fecha_alta"/>
+                    <field name="fecha_baja"/>
+                </tree>
+            </field>
+          </record>
+        <data>
+            <!-- Action to open Vehiculos list -->
+            <act_window
+                id="action_ingresos"
+                name="Ingresos"
+                res_model="ingresos"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_ingresos" name="Ingresos" sequence="5"/>
+            <menuitem id="menu_ingresos_ingresos" name="Ingresos" parent="menu_ingresos" sequence="10" action="action_ingresos" />
+        </data>
+    </odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="view_form_especialidades" model="ir.ui.view">
+            <field name="name">Especialidades Form</field>
+            <field name="model">especialidades</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <field name="name"/>
+                    <field name="turno"/>
+                    <field name="active"/>
+                    <field name="consultas"/>
+                    <field name="descripcion"/>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_especialidades" model="ir.ui.view">
+            <field name="name">Especialidades Tree</field>
+            <field name="model">especialidades</field>
+            <field name="arch" type="xml">
+                <tree colors="especialidades">
+                    <field name="name"/>
+                    <field name="turno"/>
+                    <field name="active"/>
+                    <field name="consultas"/>
+                </tree>
+            </field>
+          </record>
+        <data>
+            <!-- Action to open Vehiculos list -->
+            <act_window
+                id="action_especialidades"
+                name="Especialidades"
+                res_model="especialidades"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_especialidades" name="Especialidades" sequence="10"/>
+            <menuitem id="menu_especialidades_especialidades" name="Especialidades" parent="menu_especialidades" sequence="10" action="action_especialidades" />
+        </data>
+    </odoo>

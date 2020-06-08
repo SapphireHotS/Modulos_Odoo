@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <data>
+            <!-- Action to open clientes list -->
+            <act_window
+                id="action_clientes"
+                name="Clientes"
+                res_model="clientes"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_clientes" 
+            name="Clientes" 
+            parent="menu_gestion_empresa" 
+            sequence="10" 
+            action="action_clientes" />
+        </data>
+
+        <record id="view_form_clientes" model="ir.ui.view">
+            <field name="name">clientes Form</field>
+            <field name="model">clientes</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <header>
+					</header>
+					<sheet>
+						<group name="group_top">
+							<group name="group_left">
+								<field name="idcliente"/>
+                                <field name="cliente"/>
+                                <field name="apellidos"/>
+							</group>
+							<group name="group_right">							
+								<field name="fechanac"/>
+                                <field name="telefono"/>
+                                <field name="direccion"/>
+							</group>
+						</group>							
+					</sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_clientes" model="ir.ui.view">
+            <field name="name">clientes Tree</field>
+            <field name="model">clientes</field> 
+            <field name="arch" type="xml">
+                <tree colors="clientes">
+                    <field name="idcliente"/>
+                    <field name="cliente"/>
+                    <field name="apellidos"/>
+                    <field name="fechanac"/>
+                    <field name="telefono"/>
+                    <field name="direccion"/>
+                </tree>
+            </field>
+          </record>
+        
+    </odoo>

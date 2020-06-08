@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <report id="report_cliente"
+            string="informe_especialidades"
+            model="especialidades"
+            report_type="qweb-pdf"
+            name="gestion_hospitalaria.report_cliente_template"
+        />
+        <template id="reort_cliente_template">
+        <t t-call="report.html_container">                                               
+        <t t-call="report.external_layout">
+        </t>
+            <div class="header">
+            
+            </div>
+        </t>
+        </template>
+    </data>
+    </odoo>

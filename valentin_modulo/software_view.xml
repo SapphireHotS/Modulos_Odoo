@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <data>
+            <!-- Action to open software list -->
+            <act_window
+                id="action_software"
+                name="Software"
+                res_model="software"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_software" 
+            name="Software" 
+            parent="menu_gestion_empresa" 
+            sequence="10" 
+            action="action_software" />
+        </data>
+
+        <record id="view_form_software" model="ir.ui.view">
+            <field name="name">software Form</field>
+            <field name="model">software</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <header>
+					</header>
+					<sheet>
+						<group name="group_top">
+							<group name="group_left">
+								<field name="idproducto"/>
+								<field name="nombre"/>
+							</group>
+							<group name="group_right">							
+								<field name="ultimaversion"/>
+								<field name="precio"/>
+							</group>
+						</group>							
+					</sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_software" model="ir.ui.view">
+            <field name="name">software Tree</field>
+            <field name="model">software</field> 
+            <field name="arch" type="xml">
+                <tree colors="software">
+                    <field name="idproducto"/>
+                    <field name="nombre"/>
+                    <field name="ultimaversion"/>
+                    <field name="precio"/>
+                </tree>
+            </field>
+          </record>
+        
+    </odoo>

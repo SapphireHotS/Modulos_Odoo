@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <data>
+            <!-- Action to open Medicos list -->
+            <act_window
+                id="action_medicos"
+                name="Médicos"
+                res_model="medicos"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_medicos"
+             name="Medicos" 
+             sequence="10"/>
+            <menuitem id="menu_medicos_medicos" 
+            name="Médicos" 
+            parent="menu_medicos" 
+            sequence="10" 
+            action="action_medicos" />
+        </data>
+
+        <record id="view_form_medicos" model="ir.ui.view">
+            <field name="name">Medicos Form</field>
+            <field name="model">medicos</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <field name="name"/>
+                    <field name="apellidos"/>
+                    <field name="activo"/>
+                    <field name="participaUrgencias"/>
+                    <field name="especialidad"/>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_medicos" model="ir.ui.view">
+            <field name="name">Medicos Tree</field>
+            <field name="model">medicos</field> 
+            <field name="arch" type="xml">
+                <tree colors="Medicos">
+                    <field name="name"/>
+                    <field name="apellidos"/>
+                    <field name="activo"/>
+                    <field name="participaUrgencias"/>
+                    <field name="especialidad"/>
+                </tree>
+            </field>
+          </record>
+        
+    </odoo>

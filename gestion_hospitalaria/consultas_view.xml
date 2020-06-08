@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="view_form_consultas" model="ir.ui.view">
+            <field name="name">Consultas Form</field>
+            <field name="model">consultas</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <field name="numConsulta"/>
+                    <field name="medico"/>
+                    <field name="tipo"/>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_consultas" model="ir.ui.view">
+            <field name="name">Consultas Tree</field>
+            <field name="model">consultas</field>
+            <field name="arch" type="xml">
+                <tree colors="consultas">
+                    <field name="numConsulta"/>
+                    <field name="medico"/>
+                    <field name="tipo"/>
+                </tree>
+            </field>
+          </record>
+        <data>
+            <!-- Action to open Vehiculos list -->
+            <act_window
+                id="action_consultas"
+                name="Consultas"
+                res_model="consultas"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_consultas" name="Consultas" sequence="10"/>
+            <menuitem id="menu_consultas_consultas" name="Consultas" parent="menu_consultas" sequence="10" action="action_consultas" />
+        </data>
+    </odoo>
