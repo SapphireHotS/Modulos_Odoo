@@ -1,0 +1,26 @@
+PATRONES DE DISEÑO: crea un vocabulario que todo el mundo pueda entender; crea palabras que definen una problemática y una solución a la vez.
+    -Patrones de diseño: Tiene un contexto más pequeño, se centran en la forma en que los OBJETOS se crean, estructuran o interactúan con el resto.
+        -Patrones creacionales: Controlan la forma en que los objetos son creados. Hay que evitar que el programador use "new" para crear un objeto.
+        -Patrones esctructurales: Define la forma en que las clases deben de estructurarse.
+        -Patrones de comportamiento: Define la forma en que los objetos deben de comportarse en Runtime.
+    -Patornes arquitectónicos: Afecta la forma de trabajar del todo el COMPONENTE, impone restricciones, así como la forma en que se comunica con otros componentes. Ejemplos: patrones de integración, seguridad y web.
+
+
+DATASOURCE: Es un componente que permite mantener varias conexiones abiertas a la base de datos y que permite que las conexionessean reutilizadas una vez que no sean requeridas, evitando tener que abrir una nueva conexion cada vez que es solicitada, lo que provoca una mejora en el rendimiento.
+SINGLETON: Es una clase que restringe a una el número de instancias que es posible crear, evitando que se creen varias instancias del componente anterior.
+
+
+WEB SPA: (Single Page Application), es una aplicación web de una sola página donde la interacción y la navegación entre las secciones de la página se hace en una sola, por lo cual no hay que actualizar la página, lo que hace que la navegación sea dinámica, asíncrona, reactiva y prácticamente instantánea.
+
+APLICACIÓN MONOLÍTICA: Hace referencia a una aplicación en la que la capa de interfaz de usuario y la capa de acceso a datos  están combinadas en un mismo programa y  sobre una misma plataforma, lo que hace a la aplicación indepentiente de otras.
+
+
+
+
+
+
+
+
+        LENGUAJES DE PROGRAMACIÓN
+
+-PHP: Pre Hypertext-processor, es un lenguaje de programación de uso general de código del lado del servidor originalmente diseñado para el desarollo web de contenido dinámico. El código es interpretado por un servidor web con un módulo de procesador de php, el más comun APACHE. 
