@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <data>
+            <!-- Action to open productos list -->
+            <act_window
+                id="action_productos"
+                name="Productos"
+                res_model="productos"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_productos" 
+            name="Productos" 
+            parent="menu_emob" 
+            sequence="10" 
+            action="action_productos" />
+        </data>
+
+        <record id="view_form_productos" model="ir.ui.view">
+            <field name="name">productos Form</field>
+            <field name="model">productos</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <header>
+					</header>
+					<sheet>
+						<group name="group_top">
+							<group name="group_left">
+								<field name="idproducto"/>
+                                <field name="modelo"/>
+                                <field name="lugar"/>
+							</group>
+							<group name="group_right">							
+								<field name="estado"/>
+                                <field name="precio"/>
+							</group>
+						</group>							
+					</sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_productos" model="ir.ui.view">
+            <field name="name">productos Tree</field>
+            <field name="model">productos</field> 
+            <field name="arch" type="xml">
+                <tree colors="productos">
+                    <field name="idproducto"/>
+                    <field name="modelo"/>
+                    <field name="lugar"/>
+                    <field name="estado"/>
+                    <field name="precio"/>
+                </tree>
+            </field>
+          </record>
+        
+    </odoo>

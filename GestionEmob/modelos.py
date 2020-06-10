@@ -12,7 +12,7 @@ class clientes(models.Model):
     nombre = fields.Char('Nombre del cliente')
     apellidos = fields.Char('Apellidos del cliente')
     numtelefono = fields.Char('Telefono del cliente')
-    compras = fields.one2many('ventas','idventa', 'ventas')
+    compras = fields.One2many('ventas','idventa', 'ventas')
 
 
 class productos(models.Model):

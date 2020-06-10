@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <data>
+            <!-- Action to open ventas list -->
+            <act_window
+                id="action_ventas"
+                name="Ventas"
+                res_model="ventas"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_ventas" 
+            name="Ventas" 
+            parent="menu_emob" 
+            sequence="10" 
+            action="action_ventas" />
+        </data>
+
+        <record id="view_form_ventas" model="ir.ui.view">
+            <field name="name">ventas Form</field>
+            <field name="model">ventas</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <header>
+					</header>
+					<sheet>
+						<group name="group_top">
+							<group name="group_left">
+								<field name="idventa"/>
+                                <field name="idproducto"/>
+							</group>
+							<group name="group_right">							
+								<field name="idcliente"/>
+                                <field name="fechaventa"/>
+							</group>
+						</group>							
+					</sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_ventas" model="ir.ui.view">
+            <field name="name">ventas Tree</field>
+            <field name="model">ventas</field> 
+            <field name="arch" type="xml">
+                <tree colors="ventas">
+                    <field name="idventa"/>
+                    <field name="idproducto"/>
+                    <field name="idcliente"/>
+                    <field name="fechaventa"/>
+                </tree>
+            </field>
+          </record>
+        
+    </odoo>

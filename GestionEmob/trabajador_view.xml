@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <data>
+            <!-- Action to open trabajador list -->
+            <act_window
+                id="action_trabajador"
+                name="Trabajador"
+                res_model="trabajador"
+                view_mode="tree,form"
+            />
+            <menuitem id="menu_trabajador" 
+            name="Trabajador" 
+            parent="menu_emob" 
+            sequence="10" 
+            action="action_trabajador" />
+        </data>
+
+        <record id="view_form_trabajador" model="ir.ui.view">
+            <field name="name">trabajador Form</field>
+            <field name="model">trabajador</field>
+            <field name="arch" type="xml">
+                <form string="arch" type="xml">
+                    <header>
+					</header>
+					<sheet>
+						<group name="group_top">
+							<group name="group_left">
+								<field name="idtrabajador"/>
+                                <field name="dni"/>
+                                <field name="usuario"/>
+                                <field name="numtelefono"/>
+                                <field name="correo"/>
+							</group>
+							<group name="group_right">							
+								<field name="contrasenia"/>
+                                <field name="nombre"/>
+                                <field name="apellidos"/>
+							</group>
+						</group>							
+					</sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_trabajador" model="ir.ui.view">
+            <field name="name">trabajador Tree</field>
+            <field name="model">trabajador</field> 
+            <field name="arch" type="xml">
+                <tree colors="trabajador">
+                    <field name="usuario"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="numtelefono"/>
+                    <field name="correo"/>
+                </tree>
+            </field>
+          </record>
+        
+    </odoo>
